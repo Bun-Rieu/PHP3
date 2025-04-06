@@ -1,0 +1,113 @@
+/* Product Card Styling */
+.product-grid {
+    margin: 20px 0;
+}
+
+.product-card {
+    position: relative;
+    border: none;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 10px !important;
+}
+
+.product-title {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 6px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.price-section {
+    margin-bottom: 6px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: 700;
+    color: #d0021b;
+}
+
+/* Action Buttons Styling */
+.buttons {
+    display: none; /* Hide the original buttons */
+}
+
+/* Product Actions (Heart and Cart) */
+.product-card::after {
+    content: "";
+    position: absolute;
+    bottom: 30%; /* Adjust as needed */
+    right: 10px;
+    width: 80px;
+    height: 40px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.product-card:hover::after {
+    opacity: 1;
+}
+
+/* Heart and Cart icons that need to be added to the template */
+.wishlist-icon, .cart-icon {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.wishlist-icon {
+    right: 10px;
+    bottom: calc(30% + 50px);
+}
+
+.cart-icon {
+    right: 10px;
+    bottom: calc(30% + 10px);
+}
+
+.product-card:hover .wishlist-icon,
+.product-card:hover .cart-icon {
+    opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .product-title {
+        font-size: 13px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+}
