@@ -217,7 +217,7 @@
                                 <div class="d-grid gap-2 mb-4">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                
+
                                 <input type="hidden" name="product_variations_id" id="variation-id" value="{{ $variation ? $variation->id : '' }}">
                                 <button type="submit" class="btn btn-outline-danger btn-lg">Thêm Vào Giỏ Hàng</button>
                                 </form>
